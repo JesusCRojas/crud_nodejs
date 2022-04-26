@@ -1,0 +1,34 @@
+<table class="table table-bordered table-striped text-center mt-4">
+    
+    <thead>
+        
+        <tr class="bg-primary text-white">
+            <th>ID</th>
+            <th>NOMBRES</th>
+            <th>IMAGEN</th>
+            <th>ACCIONES</th>
+        </tr>
+
+    </thead>
+    
+    <tbody>
+
+        <% datosUSUARIOS_LISTAR.forEach((DATOS_USUARIOSS)=> {%>
+    
+        <tr>
+            <td><%= DATOS_USUARIOSS.id %></td>
+            <td><%= DATOS_USUARIOSS.nom %></td>
+            <td><%= DATOS_USUARIOSS.ima %></td>
+            <td>
+                <!-- Botón EDITAR.-->
+                <a href="/usuario/formularioUsuariosActualizar/<%= DATOS_USUARIOSS.id %>" class="btn btn-outline-info">Editar</a>
+
+                <!-- Botón ELIMINAR.-->
+                <a href="/usuario/eliminarDatosUsuario/<%= DATOS_USUARIOSS.id %>" class="btn btn-outline-info">Eliminar</a>
+            </td>
+        </tr>
+
+        <% }) %>
+
+    </tbody>
+</table>

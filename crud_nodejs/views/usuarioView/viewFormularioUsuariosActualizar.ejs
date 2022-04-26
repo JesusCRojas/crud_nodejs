@@ -1,0 +1,39 @@
+<%- include('./layouts/viewCabecera'); %>
+
+    <% if (datosUsuarioActualizar) { %>
+
+    <div class="container mt-4">
+        <div class="card border-secondary">
+
+            <div class="card-header">Editar Registro</div>
+
+            <div class="card-body">
+
+                <form action="/usuario/actualizarDatosUsuario" method="POST">
+
+                    <input id="id" name="idHTML" value="<%= datosUsuarioActualizar.id %>" hidden>
+
+                    <div class="mb-3">
+                    <label for="user" class="form-label">Nombres</label>
+                    <input type="text" class="form-control" id="nombres" name="nombresHTML" value="<%= datosUsuarioActualizar.nom %>" tabindex="1">
+                    </div>
+
+                    <div class="mb-3">
+                    <label for="user" class="form-label">Imagen</label>
+                    <input type="text" class="form-control" id="imagen" name="imagenHTML"  value="<%= datosUsuarioActualizar.ima %>" tabindex="2">
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary" tabindex="5">Guardar</button>
+                    
+                    <a href="/usuario/mantenedorUsuarios" class="btn btn-secondary">Cancelar</a>
+
+                </form>
+
+            </div>
+
+        </div>
+    </div>
+    
+    <% } %>
+
+<%- include('./layouts/viewPie'); %>
